@@ -1,0 +1,29 @@
+<app-banner2 title="Stats"></app-banner2>
+<div class="col-lg-6 container">
+
+    <div class="widget-next-match " style="margin :20px;">
+        <table class="table custom-table " >
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Score One</th>
+                    <th>Score Two</th>
+                     <th>PTS</th>
+                </tr>
+            </thead>
+            <tbody >
+               
+                <tr *ngFor ="let s of statsTab">
+                    <td>{{s.id }}</td>
+                    <td><strong class="text-white">{{s.title}}</strong></td>
+                    <td>{{s.scoreOne}}</td>
+                    <td>{{s.scoreTwo}}</td>
+                    <td>{{s.pt}}</td>
+                </tr>
+   
+            </tbody>
+        </table>
+    </div>
+
+</div>

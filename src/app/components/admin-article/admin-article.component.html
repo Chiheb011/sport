@@ -1,0 +1,97 @@
+<!-- <h1 style="text-align: center;">Matches</h1> -->
+<app-banner2 title="Admin"></app-banner2>
+<div  style="margin-top: 50px; margin-bottom: 50px;" class="container">
+<div style="margin-left: 30%;">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Players</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Matches</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#cantact" type="button" role="tab" aria-controls="profile" aria-selected="false">Teams</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#cantact" type="button" role="tab" aria-controls="profile" aria-selected="false">Article</button>
+    </li>
+  </ul>
+</div>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <app-admin-players></app-admin-players>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <app-admin-matches></app-admin-matches>
+    </div>
+    
+    <div class="tab-pane fade" id="cantact" role="tabpanel" aria-labelledby="profile-tab">
+      <app-admin-teams></app-admin-teams>
+  </div>
+  
+  </div>
+</div>
+<table class="table">
+
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+        <th scope="col">Date</th>
+        <th scope="col">Score Two</th>
+        <th scope="col">Date</th>
+        <th scope="col">Percent</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let match of matches">
+        <th scope="row">{{match.id}}</th>
+        <td>{{match.teamOne | reverse}}</td>
+        <td>{{match.teamTwo | replace}}</td>
+        <td>{{match.scoreOne}}</td>
+        <td>{{match.scoreTwo}}</td>
+        <td>{{match.date| date}}</td>
+        <td>{{match.percent| percent}}</td>
+        <td>
+          <button class="btn btn-success" (click)="goToDisplayMatch(match.id)"><i class="fas fa-tv"></i></button>
+          <button class="btn btn-info" (click)="goToEditMatch(match.id)"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+  <!-- <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">PU</th>
+        <th scope="col">NB</th>
+        <th scope="col">PHT</th>
+        <th scope="col">TTC</th>
+       
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let match of matches">
+        <th scope="row">{{match.id}}</th>
+        <td>{{match.pu}}</td>
+        <td>{{match.nb}}</td>
+        <td>{{match.pht}}</td>
+        <td>{{match.pht| ttc}}</td>
+      
+       
+        <td>
+          <button class="btn btn-success"> <i class="fas fa-tv"></i></button>
+          <button class="btn btn-info"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table> -->

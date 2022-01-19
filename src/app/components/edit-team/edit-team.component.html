@@ -1,0 +1,32 @@
+<app-banner2 title="Edit Team"></app-banner2>
+<h1 style="text-align: center;  margin-top: 20px;">Edit Team</h1> <br> 
+<form #EditTeamForm="ngForm" (ngSubmit)="EditTeam()" style="margin-bottom: 20px;">
+    <div class="mb-3 col-lg-4 container">
+      <label class="form-label"> Name</label>
+      <input type="text" class="form-control"  [(ngModel)]="Team.TeamName" [ngModelOptions]="{standalone: true}"  >
+      
+    </div>
+    <div class="mb-3 col-lg-4 container">
+        <label class="form-label">Foundation</label>
+        <input type="text" class="form-control" [(ngModel)]="Team.Foundation" [ngModelOptions]="{standalone: true}"  >
+        
+      </div>
+     
+      
+      <div class="mb-3 col-lg-4 container">
+        <label class="form-label">Country</label>
+        <input type="text" class="form-control" [(ngModel)]="Team.Country" [ngModelOptions]="{standalone: true}"   >
+        
+      </div>
+      <div class="mb-3 col-lg-4 container">
+        
+        <label class="btn hvr container" style="color: white; font-size: 13px;"><i class="fas fa-image"></i>  Choose an Logo <input [(ngModel)]="Team.logo" [ngModelOptions]="{standalone: true}"  type="file" id="imageProduct" style="display: none;"></label>
+        
+      </div>
+      
+   <div class="mb-3 col-lg-4 container text-center">
+    <button type="submit" class="btn btn-primary py-3 px-5" style="margin-top: 10px;">Edit Team</button></div>
+  </form>
+
+
+
